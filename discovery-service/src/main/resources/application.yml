@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+server:
+  port: 8761
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
