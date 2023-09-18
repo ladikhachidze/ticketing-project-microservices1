@@ -11,48 +11,25 @@
 
     <artifactId>discovery-service</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-ribbon</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.netflix.ribbon</groupId>
-                    <artifactId>ribbon-eureka</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>javax.servlet</groupId>
-                    <artifactId>servlet-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <image>
-                        <name>${project.groupId}/discovery-service:${project.version}</name>
-                    </image>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>build-image</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+   <dependencies>
+       <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+           <exclusions>
+               <exclusion>
+                   <groupId>org.springframework.cloud</groupId>
+                   <artifactId>spring-cloud-starter-ribbon</artifactId>
+               </exclusion>
+               <exclusion>
+                   <groupId>com.netflix.ribbon</groupId>
+                   <artifactId>ribbon-eureka</artifactId>
+               </exclusion>
+               <exclusion>
+                   <groupId>javax.servlet</groupId>
+                   <artifactId>servlet-api</artifactId>
+               </exclusion>
+           </exclusions>
+       </dependency>
+   </dependencies>
 
 </project>
