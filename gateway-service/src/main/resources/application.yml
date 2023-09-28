@@ -1,23 +1,14 @@
 spring:
   application:
-    name: task-service
-  profiles:
-    active: default
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  datasource:
-    url: jdbc:postgresql://host.docker.internal:5435/ticketing-app
-    username: postgres
-    password: 311314
-    driver-class-name: org.postgresql.Driver
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 server:
-  port: 9092
-
+  port: 8762
 
 eureka:
   instance:
@@ -46,3 +37,4 @@ info:
     version: '@project.version@'
     spring-cloud-version: '@spring-cloud.version@'
     spring-boot-version: '@project.parent.version@'
+
